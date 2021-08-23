@@ -2,9 +2,13 @@
 <div class="card border-primary mb-3">
     <div class="card-header">
         <a href={{ book.get_absolute_url }}>
-           <h4>{{ book.title }}</h4>
+            <h4 class="col-6">{{ book.title }}</h4>
         </a>
-        </div>
+        {% comment %} <div class="row justify-content-end"> {% endcomment %}
+            <a class="btn btn-sm btn-outline-warning" href={% url 'book-update-page' book.id %}>Update</a>
+            <a class="btn btn-sm btn-outline-danger" href={% url 'book-delete-page' book.id %}>Delete</a>
+        {% comment %} </div> {% endcomment %}
+    </div>
     <div class="card-body text-primary">
         <h5 class="card-title">Author:- {{ book.author_full_name }}</h5>
         <p class="card-text">{{ book.abstract }} </p>

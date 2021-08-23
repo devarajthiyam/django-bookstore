@@ -3,6 +3,7 @@
 {% block title %}<title>List of Books</title>{% endblock title %}
 
 {% block content %}
+    {% include 'book/_messages.html' %}
     <h1>List of Books</h1>
 
     {% for book in books %}

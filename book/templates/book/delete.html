@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Book Delete Page</title>{% endblock title %}
+
+{% block content %}
+    <h1>Book Delete Page</h1>
+    <hr/>
+
+    <p>Are you sure you want to delete this Book Entry?</p>
+    <hr/>
+
+    <h2>{{ book.title }}</h2>
+    <h5>Author:-{{ book.author_full_name }}</h5>
+    <p> {{ book.abstract }} </p>
+    <hr/>
+
+    <form method="POST"  action={% url 'book-delete-page' book.id %}>
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="YES Delete">
+        <a class="btn btn-secondary" href={% url 'book-list-page' %}>Cancel and Display Book List</a>
+    </form>
+
+{% endblock content %}

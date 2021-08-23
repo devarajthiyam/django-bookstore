@@ -26,7 +26,7 @@ def book_detail_view(request, pk):
 class BookDeleteView(DeleteView):
     template_name = "book/delete.html"
     model = Book
-    success_url = "/book"
+    success_url = "/book/list"
     success_message = "Book successfully deleted"
 
 
@@ -36,7 +36,7 @@ class BookCreateView(CreateView):
     # fields = "__all__"
     form_class = BookForm
     template_name = "book/create.html"
-    success_url = "/book"
+    success_url = "/book/list"
     success_message = "Book successfully added"
 
     # def form_valid(self, form):
@@ -50,5 +50,5 @@ class BookUpdateView(UpdateView):
     model = Book
     # fields = "__all__"
     form_class = BookForm
-    success_url = "/book"
+    success_url = "/book/list"
     success_message = "Book updated successfully"
