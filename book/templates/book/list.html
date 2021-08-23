@@ -3,8 +3,9 @@
 {% block title %}<title>List of Books</title>{% endblock title %}
 
 {% block content %}
-    <h1>List of Books - Book Module</h1>
+    <h1>List of Books</h1>
+
     {% for book in books %}
-        {% include 'book/list-inline.html' %}
+        {% include 'book/_list_inline.html' %}
     {% endfor %}
 {% endblock content %}

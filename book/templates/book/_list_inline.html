@@ -1,0 +1,12 @@
+
+<div class="card border-primary mb-3">
+    <div class="card-header">
+        <a href={{ book.get_absolute_url }}>
+           <h4>{{ book.title }}</h4>
+        </a>
+        </div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">Author:- {{ book.author_full_name }}</h5>
+        <p class="card-text">{{ book.abstract }} </p>
+    </div>
+</div>

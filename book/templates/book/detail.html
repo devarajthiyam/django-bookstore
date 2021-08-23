@@ -4,8 +4,10 @@
 
 {% block content %}
     <h1>Book Detail Page</h1>
+    <hr/>
     <h2>{{ book.title }}</h2>
-    <h3>Author:-{{ book.author_full_name }}</h3>
+
+    <h5>Author:-{{ book.author_full_name }}</h5>
     <p> {{ book.abstract }} </p>
 
 {% endblock content %}
