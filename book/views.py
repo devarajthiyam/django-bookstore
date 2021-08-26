@@ -4,14 +4,16 @@ from .forms import BookForm
 from django.views.generic import ListView, TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 
 
 # Create your views here.
 
 def book_list_view(request):
     template_name = "book/list.html"
+    print(messages)
     context = { 'books': Book.objects.all() }
-    print(context)
     return render(request, template_name, context )
 
 
@@ -23,11 +25,12 @@ def book_detail_view(request, pk):
 
 
 
-class BookDeleteView(DeleteView):
+class BookDeleteView(DeleteView, SuccessMessageMixin):
     template_name = "book/delete.html"
     model = Book
     success_url = "/book/list"
     success_message = "Book successfully deleted"
+
 
 
 

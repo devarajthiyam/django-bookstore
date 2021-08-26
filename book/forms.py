@@ -16,6 +16,8 @@ class BookForm(forms.ModelForm):
 
         labels = {}
 
+        
+
 
 
     def __init__(self, *args, **kwargs):

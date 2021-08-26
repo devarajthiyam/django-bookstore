@@ -7,6 +7,8 @@
     <hr/>
     <h2>{{ book.title }}</h2>
     <h5>Author:-{{ book.author_full_name }}</h5>
+    <a target="_blank" href="{{ book.ebook_pdf.url }}">View eBook (PDF)</a>
+    <img src="{{ book.cover_image.url }}">
     <p> {{ book.abstract }} </p>
 
 {% endblock content %}
